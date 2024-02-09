@@ -1,77 +1,265 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'montserrat';
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
 }
-html, body {
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 #nav {
-    height: 150px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 150px;
-    gap: 40px;
-    position: fixed;
-    z-index: 1;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 150px;
+  gap: 40px;
+  position: fixed;
+  z-index: 99;
 }
 #nav img {
-    height: 75px;
+  height: 75px;
 }
 #nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
+  text-transform: uppercase;
+  font-weight: 500;
 }
+
+#cursor {
+  width: 25px;
+  height: 25px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  transition: all linear 0.2s;
+}
+#cursor-blur {
+  width: 350px;
+  height: 350px;
+  background-color: #96c11e54;
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(50px);
+  transition: all linear 0.2s;
+  z-index: 9;
+}
+
 video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
 }
 #main {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #page1 {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
 }
 #page1 h1 {
-    font-size: 140px;
-    font-weight: 900;
-    position: relative;
+  font-size: 140px;
+  font-weight: 900;
+  position: relative;
 }
 
-#page1 h1::before{
-    content: "EAT. DRINK. PLAY.";
-    position: absolute;
-    color: #000;
-    top: -4px;
-    left: -4px;
-    -webkit-text-stroke: 2px #95c11e;
-    z-index: -1;
+#page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  color: #000;
+  top: -3px;
+  left: -3px;
+  -webkit-text-stroke: 2px #95c11e;
+  z-index: -1;
 }
-
 #page1 h2 {
-    margin-bottom: 10px;
-    font-size: 35px;
-    font-weight: 800;
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 800;
+  z-index: 10;
 }
 #page1 p {
-    font-size: 19px;
-    font-weight: 400;
-    width: 40%;
+  font-size: 19px;
+  font-weight: 400;
+  width: 40%;
+}
+
+#page2 {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scrollleft;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 110px;
+  font-weight: 900;
+  margin-left: 8px;
+  transition: all linear 0.3s;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffff;
+}
+
+#scroller h4:hover {
+  color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+@keyframes scrollleft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  margin-top: 40px;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+ 
+}
+
+#about-us img {
+  height: 240px;
+  width: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+  z-index: 10;
+  transition: all ease 0.6s;
+}
+
+#about-us img:hover {
+  transform: rotate3d(1, 1, 1, 5deg);
+}
+
+#about-us-in {
+  width: 40%;
+  text-align: center;
+}
+#about-us-in h3 {
+  font-size: 55px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+#about-us-in p {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+#cards-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.card {
+  height: 70%;
+  width: 20%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  transition: all ease 0.6s;
+}
+#card1 {
+  background-image: url(card1.avif);
+}
+#card2 {
+  background-image: url(card2.webp);
+}
+#card3 {
+  background-image: url(card3.avif);
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  padding-top: 70px;
+  background-color: #95c11e;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+.overlay h4 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: 800;
+}
+.overlay p {
+  line-height: 20px;
+  font-size: 15px;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+.card:hover {
+  transform: rotate3d(1, 1, 1, -5deg);
+}
+
+#green-div{
+    height: 30vh;
+    display: flex;
+    background-color: #95c11e;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    text-align: center;
+
+}
+#green-div h4 {
+    width: 45%;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000;
+    line-height: 40px;
+}
+#green-div img {
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
 }
