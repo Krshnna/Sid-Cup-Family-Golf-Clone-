@@ -10,6 +10,21 @@ body {
   height: 100%;
   width: 100%;
 }
+*::selection {
+  background-color: #fff;
+  color: #95c11e;
+}
+body::-webkit-scrollbar {
+  display: block;
+  background-color: #95c11e;
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: #fff;
+}
+
 #nav {
   height: 150px;
   width: 100%;
