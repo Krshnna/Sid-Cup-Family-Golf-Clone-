@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0 150px;
-  gap: 40px;
+  gap: 50px;
   position: fixed;
   z-index: 99;
 }
@@ -27,6 +27,7 @@ body {
 #nav h4 {
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 18px;
 }
 
 #cursor {
@@ -39,8 +40,8 @@ body {
   transition: all linear 0.2s;
 }
 #cursor-blur {
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   background-color: #96c11e54;
   border-radius: 50%;
   position: fixed;
@@ -262,4 +263,145 @@ video {
     height: 100%;
     object-fit: cover;
     width: 14%;
+}
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#page3 > p {
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 800;
+  width: 60%;
+  text-align: center;
+}
+#page3 img {
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1{ 
+  left: 12%;
+  bottom: 65%;
+}
+#page3 #colon2 {
+  right: 12%;
+  bottom: 30%;
+}
+
+#page4 {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+}
+
+#page4 > h1 {
+  position: absolute;
+  font-size: 96px;
+  top: -25px;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.elem {
+  height: 70%;
+  width: 26%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+.elem h2 {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vw;
+  letter-spacing: 2px;
+  color: #000;
+  font-weight: 800;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  transition: all ease-in-out 0.5s;
+}
+
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: center;
+  scale: 1.1;
+  transition: all ease-in-out 0.5s;
+}
+.elem:hover h2{
+  color: #fff;
+  background-color: transparent;
+}
+.elem:hover img {
+  scale: 1;
+}
+
+#footer {
+  height: 40vh;
+  width: 100%;
+  background-color: #95c11e;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 100px;
+  padding: 0 100px;
+}
+#footer > img {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+}
+#f1, #f2, #f3, #f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+}
+
+#f2 > h3 {
+  font-size: 25px;
+  /* line-height: 30px; */
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+#f3 > h3 {
+  font-size: 22px;
+  line-height: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #000;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+#f4 > h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #000;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
